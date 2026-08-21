@@ -4,50 +4,105 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>미믹 키우기</title>
+
+<!-- 카카오톡·디스코드 등에 링크를 붙일 때 뜨는 미리보기 -->
+<meta property="og:title" content="미믹 키우기">
+<meta property="og:description" content="공식 안내 페이지">
+<meta property="og:image" content="https://game.voidion.kr/img/bg.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="./img/icon.jpg">
+<link rel="apple-touch-icon" href="./img/icon.jpg">
+
 <style>
+  /* 🔴 배경 이미지 = img/bg.jpg (없으면 아래 그라디언트만 보인다 — 페이지는 그대로 뜬다).
+     ⚠️ fixed 로 깔아 스크롤해도 안 움직인다. 긴 약관 페이지와 달리 이 화면은 짧아서
+        같이 스크롤되면 아래쪽이 그냥 빈 색이 된다. */
   :root { color-scheme: light dark; }
-  body { margin:0 auto; padding:56px 20px; max-width:620px;
-         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic",sans-serif;
-         line-height:1.7; color:#1c1c22; background:#fff; word-break:keep-all; }
-  @media (prefers-color-scheme: dark){ body{ color:#e6e4ea; background:#16151a; } }
-  h1 { font-size:1.6rem; margin:0 0 4px; }
-  .sub { opacity:.7; margin:0 0 34px; }
-  a.card { display:block; padding:16px 18px; margin:10px 0; border:1px solid #8884;
-           border-radius:12px; text-decoration:none; color:inherit; }
-  a.card:hover { background:#8881; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; padding:44px 20px 64px; min-height:100vh;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic",sans-serif;
+    line-height:1.7; color:#1c1c22; word-break:keep-all;
+    background:#241c33 url("./img/bg.jpg") center center / cover no-repeat fixed;
+  }
+  /* 배경 위에 어둡게 한 겹 — 그림이 화려해도 글자가 읽힌다.
+     ⚠️ 이게 없으면 배경마다 가독성이 달라져 그림을 바꿀 때마다 글자색을 다시 잡아야 한다. */
+  body::before {
+    content:""; position:fixed; inset:0; background:rgba(10,6,20,.42); z-index:0;
+  }
+  .wrap { position:relative; z-index:1; max-width:620px; margin:0 auto; }
+
+  /* 제목 카드 — 오른쪽에 앱 아이콘 */
+  .head {
+    display:flex; align-items:center; gap:16px;
+    background:#fffffff2; border-radius:14px; padding:18px 20px; margin-bottom:14px;
+    box-shadow:0 6px 22px rgba(0,0,0,.28);
+  }
+  .head .txt { flex:1; min-width:0; }
+  h1 { font-size:1.7rem; margin:0 0 2px; color:#1c1c22; }
+  .sub { opacity:.62; margin:0; font-size:.95rem; color:#1c1c22; }
+  /* 🔴 아이콘 = img/icon.jpg. 없으면 <img> 가 깨진 그림으로 뜨므로 onerror 로 통째로 숨긴다
+     (아래 body 참고) — 「빈 네모」가 남는 것보다 없는 편이 낫다. */
+  .head img { width:78px; height:78px; border-radius:18px; display:block;
+              box-shadow:0 2px 10px rgba(0,0,0,.25); }
+
+  a.card {
+    display:block; padding:16px 18px; margin:10px 0; border-radius:12px;
+    text-decoration:none; color:#1c1c22;
+    background:#fffffff2; box-shadow:0 4px 16px rgba(0,0,0,.22);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  a.card:hover { transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,0,0,.3); }
   a.card b { display:block; font-size:1.05rem; }
-  a.card span { opacity:.7; font-size:.92rem; }
-  .foot { margin-top:44px; font-size:.88rem; opacity:.65; }
+  a.card span { opacity:.66; font-size:.92rem; }
+
+  .foot { margin-top:34px; font-size:.88rem; color:#fff; opacity:.72; text-align:center; }
+
+  /* ⚠️ 좁은 화면 — 배경을 fixed 로 두면 iOS 에서 확대되어 잘리므로 scroll 로 되돌린다. */
+  @media (max-width:520px) {
+    body { padding:24px 14px 48px; background-attachment:scroll; }
+    .head img { width:62px; height:62px; border-radius:14px; }
+    h1 { font-size:1.45rem; }
+  }
 </style>
 </head>
 <body>
-<h1>미믹 키우기</h1>
-<p class="sub">공식 안내 페이지</p>
+<div class="wrap">
 
-<a class="card" href="./terms.html">
-  <b>이용약관</b>
-  <span>서비스 이용 · 청약철회 · 환불 · 이용 제한</span>
-</a>
-<a class="card" href="./privacy.html">
-  <b>개인정보처리방침</b>
-  <span>수집 항목 · 보유 기간 · 이용자의 권리</span>
-</a>
+  <div class="head">
+    <div class="txt">
+      <h1>미믹 키우기</h1>
+      <p class="sub">공식 안내 페이지</p>
+    </div>
+    <!-- 파일이 없으면 이 <img> 만 사라진다 (제목은 그대로) -->
+    <img src="./img/icon.jpg" alt="미믹 키우기" onerror="this.remove()">
+  </div>
 
-<a class="card" href="./odds.html">
-  <b>확률형 아이템 확률 정보</b>
-  <span>소환 레벨별 · 등급별 · 티어별 전체 확률</span>
-</a>
+  <a class="card" href="./terms.html">
+    <b>이용약관</b>
+    <span>서비스 이용 · 청약철회 · 환불 · 이용 제한</span>
+  </a>
+  <a class="card" href="./privacy.html">
+    <b>개인정보처리방침</b>
+    <span>수집 항목 · 보유 기간 · 이용자의 권리</span>
+  </a>
 
-<a class="card" href="./delete-account.html">
-  <b>계정 및 데이터 삭제 요청</b>
-  <span>삭제 방법 · 삭제되는 항목 · 법정 보관 기간</span>
-</a>
+  <a class="card" href="./odds.html">
+    <b>확률형 아이템 확률 정보</b>
+    <span>소환 레벨별 · 등급별 · 티어별 전체 확률</span>
+  </a>
 
-<a class="card" href="mailto:info@voidion.kr">
-  <b>문의하기</b>
-  <span>info@voidion.kr</span>
-</a>
+  <a class="card" href="./delete-account.html">
+    <b>계정 및 데이터 삭제 요청</b>
+    <span>삭제 방법 · 삭제되는 항목 · 법정 보관 기간</span>
+  </a>
 
-<p class="foot">© 보이디온</p>
+  <a class="card" href="mailto:info@voidion.kr">
+    <b>문의하기</b>
+    <span>info@voidion.kr</span>
+  </a>
+
+  <p class="foot">© 보이디온</p>
+</div>
 </body>
 </html>
