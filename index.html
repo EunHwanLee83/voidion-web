@@ -102,8 +102,35 @@
     <span>info@voidion.kr</span>
   </a>
 
-  <!-- ⚠️ 여기는 <b>표기용</b>이다 — 법정 <b>상호</b>는 「보이디온」이고 그건 각 문서 하단의
-       「사업자 정보」 표가 담는다(publish.sh 가 넣는다). 그 표의 상호는 <b>바꾸지 말 것</b>. -->
+  <!-- 🔴 【사업자 정보를 <b>이 페이지에도</b> 둔다】 (2026-08-26 사용자 지정)
+       전자상거래법 제10조는 사업자 정보를 <b>초기 화면</b>에 표시하도록 정한다.
+       이 페이지가 그 초기 화면이라, 하위 문서에만 있으면 「한 번 더 들어가야 보이는」 상태가 된다.
+       ⚠️ 다른 문서와 <b>내용이 같아야 한다</b> — 한 곳만 고치면 같은 사업자가 두 값을 말한다.
+          검사 = `python web/check_refs.py`.
+       ⚠️ `odds.html` 은 <b>생성물</b>이라 여기가 아니라 `publish.sh` 가 붙인다(고칠 때 그쪽도 볼 것). -->
+  <h2 style="font-size:1.02rem;margin:34px 0 8px;padding-top:14px;border-top:1px solid #8883">사업자 정보</h2>
+  <style>
+  /* ⚠️ 스타일을 <b>표 옆에</b> 둔다 — 다른 약관 페이지·`publish.sh` 와 같은 규약이다.
+        이 페이지는 카드 목록이라 공용 `table` CSS 가 아예 없어, 여기서 <b>전부 지정</b>한다. */
+  table.bizinfo { display:table; width:auto; max-width:100%; border-collapse:collapse;
+                  font-size:.72rem; margin:8px 0; }
+  table.bizinfo th, table.bizinfo td { border:1px solid #8884; padding:2px 8px;
+                                       line-height:1.45; text-align:left; }
+  table.bizinfo th { background:#8881; white-space:nowrap; }
+  </style>
+  <table class="bizinfo">
+    <tr><th>서비스명</th><td>미믹 키우기</td></tr>
+    <tr><th>상호</th><td>보이디온</td></tr>
+    <tr><th>대표자</th><td>이은환</td></tr>
+    <tr><th>사업자등록번호</th><td>653-44-01317</td></tr>
+    <tr><th>통신판매업 신고번호</th><td>2026-용인기흥-01317</td></tr>
+    <tr><th>주소</th><td>경기도 용인시 기흥구 구갈로60번길 9-1, 7층 7102호 (구갈동, 라파빌딩)</td></tr>
+    <tr><th>전화번호</th><td>050-6369-8934</td></tr>
+    <tr><th>고객센터 이메일</th><td><a href="mailto:info@voidion.kr">info@voidion.kr</a></td></tr>
+  </table>
+
+  <!-- ⚠️ 여기는 <b>표기용</b>이다 — 법정 <b>상호</b>는 「보이디온」이고 그건 바로 위
+       「사업자 정보」 표가 담는다. 그 표의 상호는 <b>바꾸지 말 것</b>. -->
   <p class="foot">© VOIDION</p>
 </div>
 </body>
