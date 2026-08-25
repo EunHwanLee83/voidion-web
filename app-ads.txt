@@ -8,26 +8,154 @@
 # 형식: <광고사 도메인>, <퍼블리셔 ID>, <DIRECT|RESELLER>, <TAG-ID(선택)>
 #
 # ⚠️ 퍼블리셔 ID 는 각 대시보드에서 받아야 한다 — 추측해서 적으면 대조에 실패한다.
+#    🔴 실제로 2026-08-25 에 <b>두 번</b> 틀렸다: ① Game ID 를 넣었다(→ 개발자 ID 가 맞다)
+#       ② 도메인을 unity3d.com 으로 고쳤다(→ 대시보드가 주는 unity.com 이 맞다).
+#       <b>문서보다 대시보드가 주는 값이 권위</b>다. 손으로 조립하지 말고 목록을 복사할 것.
 # ⚠️ 스토어 등록정보의 "개발자 웹사이트"가 https://game.voidion.kr 여야 한다.
 #    그 주소가 다르면 이 파일을 아무리 잘 써도 읽히지 않는다.
+#    🔴 Unity 조직 설정의 <b>「개발자 웹사이트」</b>도 마찬가지다 — 비어 있으면
+#       App-Ads URL 이 `undefined/app-ads.txt` 가 되어 크롤러가 (badUrlForm)으로 거부한다.
 # ⚠️ 수정 후 `bash web/publish.sh` 로 발행하고,
 #    https://game.voidion.kr/app-ads.txt 가 200 을 주는지 반드시 확인할 것
 #    (고친 것과 올린 것은 다르다 — 2026-08-18 에 전화번호로 같은 일을 겪었다).
+#    ⚠️ GitHub Pages 는 반영에 <b>몇 분</b> 걸린다. 저장소에 올라갔는데 404 면 기다릴 것.
 
 # ── LevelPlay / ironSource Ads ───────────────────────────────────────────
 # Publisher ID = 대시보드 ▸ (왼쪽 아래) 프로필 ▸ Account ▸ API 탭 (2026-08-25 확인: 678119)
 ironsrc.com, 678119, DIRECT
 
-# ── Unity Ads ────────────────────────────────────────────────────────────
-# LevelPlay 미디에이션에 붙인 Unity Ads 비더 (2026-08-25). Game ID = 6180622.
-# ⚠️ 이 줄은 <b>Game ID</b> 기준이다 — Unity Grow(Monetize) 대시보드가 <b>Organization ID</b> 를
-#    쓰라고 안내하면 그쪽 값으로 바꿀 것. 두 값은 다르고, 틀리면 대조에 <b>조용히</b> 실패한다.
-unity.com, 6180622, DIRECT
-
-# ⚠️ 광고 네트워크를 <b>추가할 때마다</b> 그 네트워크의 줄도 여기 넣어야 한다
-#    (AppLovin·Liftoff·Mintegral…). 안 넣으면 그 수요원의 단가만 조용히 떨어진다.
+# ── Unity Ads (+ Unity 가 재판매하는 파트너) ─────────────────────────────
+# 원본 = Unity 대시보드 ▸ 조직 설정 ▸ app-ads.txt ▸ 「전체 목록 표시」 (2026-08-25 복사)
+#  · unity.com 줄이 <b>DIRECT</b>, 나머지는 Unity 가 재판매하는 <b>RESELLER</b> 다.
+#  · 개발자 ID <b>1029077</b> (조직 Core ID 105938 과 <b>다른 값</b> — 이름을 보고 고를 것).
+# ⚠️ 이 목록은 <b>바뀐다</b> — Unity 안내가 「매월 확인하라」고 적는다.
+#    수십 줄이라 손으로 관리하지 말고 <b>대시보드에서 통째로 다시 복사</b>할 것.
+# ⚠️ 줄을 빼지 말 것 — RESELLER 가 빠지면 그만큼 수요가 조용히 사라진다.
+rubiconproject.com, 17608, RESELLER, 0bfd66d529a55807
+smartadserver.com, 4456, RESELLER
+triplelift.com, 13883, RESELLER, 6c33edb13117fd86
+pubmatic.com, 159501, RESELLER, 5d62403b186f2ace
+appnexus.com, 14230, RESELLER, f5ab79cb980f11d1
+videoheroes.tv, 212499, RESELLER, 064bc410192443d8
+brightmountainmedia.com, 2686958, RESELLER
+smartadserver.com, 5828, RESELLER, 060d053dcf45cbf3
+themediagrid.com, b8n9yh, RESELLER, 35d5010d7789b49d
+smaato.com, 1100058938, RESELLER, 07bcf65f187117b4
+smaato.com, 1100059563, RESELLER, 07bcf65f187117b4
+sharethrough.com, 5828, RESELLER, d53b998a7bd4ecd2
+appads.in, 106246, RESELLER
+openx.com, 537153564, RESELLER, 6a698e2ec38604c6
+rubiconproject.com, 24400, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 25060, RESELLER, 0bfd66d529a55807
+start.io, 197760873, RESELLER
+triplelift.com, 6998, RESELLER, 6c33edb13117fd86
+pubmatic.com, 166385, RESELLER, 5d62403b186f2ace
+connekt.ai, 5585919044, RESELLER
+video.unrulymedia.com, 144138083, RESELLER
+video.unrulymedia.com, 201313863, RESELLER
+onlinemediasolutions.com, 23120, RESELLER, b3868b187e4b6402
+programmaticx.ai, 84448, RESELLER, b42d42eb28400efa
+video.unrulymedia.com, 657436911, RESELLER
+improvedigital.com, 2297, RESELLER
+improvedigital.com, 2464, RESELLER
+kidoz.net, 15467, RESELLER, a109366414b7335e
+pubmatic.com, 165854, RESELLER, 5d62403b186f2ace
+pubmatic.com, 165750, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 20014, RESELLER, 0bfd66d529a55807
+kidoz.net, 14260, RESELLER, a109366414b7335e
+pubmatic.com, 166335, RESELLER, 5d62403b186f2ace
+spinx.biz, 1373698903, RESELLER, 9f2711e9aaa9f992
+google.com, pub-3990748024667386, RESELLER, f08c47fec0942fa0
+rubiconproject.com, 17062, RESELLER, 0bfd66d529a55807
+loopme.com, 20775, RESELLER, 6c8d5f95897a5a3b
+ogury.com, 065d4ff5-a269-44be-9634-9d4d7af2dfc3, RESELLER
+themediagrid.com, jvhg38, RESELLER, 9fac4a4a87c2a44f
+openx.com, 565175463, RESELLER, 6a698e2ec38604c6
+rubiconproject.com, 15268, RESELLER, 0bfd66d529a55807
+triplelift.com, 14705-eb, RESELLER
+smartadserver.com, 4525, RESELLER, 060d053dcf45cbf3
+pubmatic.com, 160318, RESELLER, 5d62403b186f2ace
+pubmatic.com, 95054, RESELLER, 5d62403b186f2ace
+nativo.com, 5958, RESELLER, 59521ca7cc5e9fee
+google.com, pub-1682595508078257, RESELLER, f08c47fec0942fa0
+undertone.com, 4108, RESELLER
+appnexus.com, 6849, RESELLER
+google.com, pub-5060663379040713, RESELLER, f08c47fec0942fa0
+stroeer.com, 17379, RESELLER
+triplelift.com, 14705, RESELLER, 6c33edb13117fd86
+media.net, 8cuh46n56, RESELLER
+pubmatic.com, 161151, RESELLER, 5d62403b186f2ace
+zmaticoo.com, 5135195, RESELLER
+voisetech.com, 1066, RESELLER
+e-planning.net, 6a7f877127485fdb, RESELLER, c1ba615865ed87b2
+rubiconproject.com, 25978, RESELLER
+triplelift.com, 14127, RESELLER, 6c33edb13117fd86
+nativo.com, 6089, RESELLER, 59521ca7cc5e9fee
+video.unrulymedia.com, 389957698, RESELLER
+openx.com, 563905670, RESELLER, 6a698e2ec38604c6
+opera.com, pub6148735850944, RESELLER, 55a0c5fd61378de3
+rubiconproject.com, 22412, RESELLER, 0bfd66d529a55807
+pubmatic.com, 160456, RESELLER, 5d62403b186f2ace
+vidazoo.com, 6a3384a48eca8f6ddad62520, RESELLER, b6ada874b4d7d0b2
+conversantmedia.com, 41024, RESELLER, 03113cd04947736d
+pokkt.com, 6246, RESELLER, c45702d9311e25fd
+smartclip.net, 14679, RESELLER
+triplelift.com, 14798, RESELLER, 6c33edb13117fd86
+sharethrough.com, 3713, RESELLER, d53b998a7bd4ecd2
+triplelift.com, 14709, RESELLER, 6c33edb13117fd86
+pubmatic.com, 167130, RESELLER, 5d62403b186f2ace
+indexexchange.com, 214183, RESELLER, 50b1c356f2c5c8fc
+anzu.io, 691e95644e633a6eee2567ee, RESELLER
+google.com, pub-2923085774557613, RESELLER, f08c47fec0942fa0
+dauup.com, 34222, RESELLER, 4daba13e2b0dfd9
+smartadserver.com, 3964, RESELLER
+lijit.com, 528770, RESELLER, fafdf38b16bf6b2b
+pubmatic.com, 165438, RESELLER, 5d62403b186f2ace
+appnexus.com, 11826, RESELLER, f5ab79cb980f11d1
+copper6.com, 766114, RESELLER
+xandr.com, 17779, RESELLER
+rubiconproject.com, 25336, RESELLER, 0bfd66d529a55807
+netmarvel.com, 1011828, RESELLER, ca3509163a633862
+media.net, 8cusc3uj7, RESELLER
+pubmatic.com, 167188, RESELLER, 5d62403b186f2ace
+insticator.com, cadff748-965f-4393-a76e-a8f902512bad, RESELLER, b3511ffcafb23a32
+bid-matrix.com, f2c71a45ea149366, RESELLER
+vidoomy.com, 8953515, RESELLER
+zetaglobal.net, 525, RESELLER
+targetbetter.com, 82228, RESELLER
+bluexad.ai, 1996418805747683328, RESELLER
+loopme.com, 11463, RESELLER, 6c8d5f95897a5a3b
+media.net, 8cu675n41, RESELLER
+rubiconproject.com, 24084, RESELLER, 0bfd66d529a55807
+appnexus.com, 17779, RESELLER
+playwire.com, 1018531, RESELLER
+sharethrough.com, 4568, RESELLER, d53b998a7bd4ecd2
+smaato.com, 1100047589, RESELLER, 07bcf65f187117b4
+odeeo.io, 118848844, RESELLER, 36cfd73091d5c3fc
+video.unrulymedia.com, 703273072, RESELLER
+video.unrulymedia.com, 290726769, RESELLER
+openx.com, 559792583, RESELLER, 6a698e2ec38604c6
+rubiconproject.com, 28341, RESELLER, 0bfd66d529a55807
+smartadserver.com, 4610, RESELLER, 060d053dcf45cbf3
+smartadserver.com, 4578, RESELLER, 060d053dcf45cbf3
+pubmatic.com, 163117, RESELLER, 5d62403b186f2ace
+unity.com, 1029077, DIRECT, 96cabb5fbdde37a7
+openx.com, 562174952, RESELLER, 6a698e2ec38604c6
+sharethrough.com, uvcax8il, RESELLER, d53b998a7bd4ecd12
+taurusx.com, 70097, RESELLER
+media.net, 8cuuq286l, RESELLER
+brightcom.com, 23120, RESELLER
+prado.co, 14260, RESELLER
+themediagrid.com, falino, RESELLER, 9fac4a4a87c2a44f
+rubiconproject.com, 27538, RESELLER, 0bfd66d529a55807
+triplelift.com, 14594, RESELLER, 6c33edb13117fd86
+triplelift.com, 14716, RESELLER, 6c33edb13117fd86
+lunamedia.io, 2fdb16a1-5025-4c41-9b17-e01e47ebc8b4, RESELLER, 524ecb396915caaf
+ignitemediatech.com, pub_11115, RESELLER
+rubiconproject.com, 24600, RESELLER, 0bfd66d529a55807
 
 # ── Google AdMob ─────────────────────────────────────────────────────────
 # ⚠️ 2026-08-24 계정 해지로 현재 꺼져 있다(`AdMobIds.Enabled = false`, 이의신청 중).
 #    줄은 남겨 둔다 — 이의신청이 받아들여지면 그 즉시 필요하고, 무효 상태여도 해롭지 않다.
+# ⚠️ 위 Unity 목록의 google.com 줄들과 <b>퍼블리셔 ID 가 다르다</b>(저쪽은 RESELLER) — 공존이 맞다.
 google.com, pub-8183862904476177, DIRECT, f08c47fec0942fa0
