@@ -108,16 +108,29 @@
        ⚠️ 다른 문서와 <b>내용이 같아야 한다</b> — 한 곳만 고치면 같은 사업자가 두 값을 말한다.
           검사 = `python web/check_refs.py`.
        ⚠️ `odds.html` 은 <b>생성물</b>이라 여기가 아니라 `publish.sh` 가 붙인다(고칠 때 그쪽도 볼 것). -->
-  <h2 style="font-size:1.02rem;margin:34px 0 8px;padding-top:14px;border-top:1px solid #8883">사업자 정보</h2>
   <style>
-  /* ⚠️ 스타일을 <b>표 옆에</b> 둔다 — 다른 약관 페이지·`publish.sh` 와 같은 규약이다.
-        이 페이지는 카드 목록이라 공용 `table` CSS 가 아예 없어, 여기서 <b>전부 지정</b>한다. */
+  /* 🔴 【이 페이지는 <b>배경이 그림</b>이다 — 판을 깔지 않으면 글자가 묻힌다】
+        (2026-08-26 실기 「사업자정보 글자가 그림땜에 안보여」)
+        `body` 가 `bg.jpg` + 어두운 딤인데 글자색은 `#1c1c22`(어두움)라, 판이 없으면
+        <b>어두운 그림 위 어두운 글자</b>가 된다. 다른 요소가 전부
+        `.card { background:#fffffff2 }` 로 흰 판을 까는 이유가 그것인데
+        <b>이 표만 빠져 있었다</b>(내가 붙일 때 그 규약을 안 따랐다).
+     ⚠️ 판은 <b>회색</b>이다(사용자 지정) — 사업자 정보는 보조 정보라
+        본문 카드(흰색)만큼 튀지 않는 편이 낫다.
+     ⚠️ <b>제목도 흰색으로 못 박는다</b> — 판 밖에 있어 그대로 두면 같은 이유로 안 보인다.
+     ⚠️ 스타일을 <b>표 옆에</b> 두는 것은 다른 약관 페이지·`publish.sh` 와 같은 규약이다.
+        이 페이지는 카드 목록이라 공용 `table` CSS 가 아예 없어 여기서 <b>전부 지정</b>한다. */
+  h2.bizhead { font-size:1.02rem; margin:34px 0 8px; color:#fff; }
   table.bizinfo { display:table; width:auto; max-width:100%; border-collapse:collapse;
-                  font-size:.72rem; margin:8px 0; }
-  table.bizinfo th, table.bizinfo td { border:1px solid #8884; padding:2px 8px;
-                                       line-height:1.45; text-align:left; }
-  table.bizinfo th { background:#8881; white-space:nowrap; }
+                  font-size:.72rem; margin:8px 0;
+                  background:#e9e7eef2; border-radius:10px; overflow:hidden;
+                  box-shadow:0 4px 16px rgba(0,0,0,.22); }
+  table.bizinfo th, table.bizinfo td { border:1px solid #0000001f; padding:4px 10px;
+                                       line-height:1.45; text-align:left; color:#1c1c22; }
+  table.bizinfo th { background:#00000010; white-space:nowrap; }
+  table.bizinfo a { color:#2d5fbf; }
   </style>
+  <h2 class="bizhead">사업자 정보</h2>
   <table class="bizinfo">
     <tr><th>서비스명</th><td>미믹 키우기</td></tr>
     <tr><th>상호</th><td>보이디온</td></tr>
