@@ -93,7 +93,7 @@
   <tr><td>Google LLC (Google Play)</td><td>アプリ配信・アプリ内課金</td><td>決済履歴</td></tr>
   <tr><td>Apple Inc. (App Store)</td><td>アプリ配信・アプリ内課金</td><td>決済履歴</td></tr>
   <tr><td>Viva Republica, Inc.（Apps in Toss）</td><td>アプリ配信・アプリ内課金・ログイン・広告の提供（Apps in Toss版）</td><td>決済履歴、会員識別子、広告関連情報</td></tr>
-  <tr><td>Unity Technologies Inc. (LevelPlay)</td><td>広告のメディエーション・配信・計測（ワンストア版・App Store版）</td><td>広告識別子、端末情報、IPアドレス、広告の表示・視聴記録</td></tr>
+  <tr><td>Unity Technologies SF (LevelPlay)</td><td>広告のメディエーション（ワンストア版・App Store版）— 広告の配信・計測のための提供は、下記「広告と広告ネットワークへの提供」をご覧ください</td><td>広告識別子、端末情報、IPアドレス、広告の表示・視聴記録</td></tr>
   <tr><td>Resend, Inc.</td><td><b>認証コード・お問い合わせへの回答メールの送信</b>、お問い合わせの写しの運営者宛て転送</td><td>メールアドレス、認証コード、お問い合わせ内容</td></tr>
   <tr><td>Cloudflare, Inc.</td><td>ゲームデータの配信（CDN）・決済レシート検証の中継</td><td>接続記録（IP）、決済検証情報</td></tr>
   <tr><td>Discord Inc.</td><td>お問い合わせ内容の運営者宛て転送（業務用メッセンジャー）</td><td>お問い合わせ内容、返信先メールアドレス、アカウントID、ニックネーム、端末情報</td></tr>
@@ -106,13 +106,13 @@
 
 <h3>広告と広告ネットワークへの提供</h3>
 <ul>
-  <li>広告（<b>リワード広告・インタースティシャル広告</b>）は、<b>ワンストア（Android）版、App Store（iOS）版およびApps in Toss版</b>にあります。ワンストア版・App Store版は<b>Unity LevelPlay</b>のメディエーションとこれに接続する<b>2つ</b>の広告ネットワーク（Unity Ads — Unity Technologies Inc.、ironSource — ironSource Ltd.）を、Apps in Toss版はTossの広告SDK（Viva Republica, Inc.）を使用します。</li>
+  <li>広告（<b>リワード広告・インタースティシャル広告</b>）は、<b>ワンストア（Android）版、App Store（iOS）版およびApps in Toss版</b>にあります。ワンストア版・App Store版は<b>Unity LevelPlay</b>のメディエーションとこれに接続する<b>2つ</b>の広告ネットワーク（Unity Ads・ironSource — いずれもUnity Technologies SFが運営し、1つの<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unityのプライバシーポリシー</a>が適用されます）を、Apps in Toss版はTossの広告SDK（Viva Republica, Inc.）を使用します。</li>
   <li>広告SDKは、ゲームを初めて起動したときの<b>同意画面で同意した後にのみ</b>開始します。App Store版では、その後Appleの<b>App Tracking Transparency（ATT）</b>によるトラッキング許可の確認を経て開始し、トラッキングを許可した場合は広告識別子（IDFA）をパーソナライズ広告に使用し、許可しない場合は広告識別子を使用せずに<b>パーソナライズされていない広告</b>を表示します。</li>
-  <li>広告SDKは、広告識別子（App Store版はトラッキングを許可した場合のみ）、端末情報（機種・OS・言語）、IPアドレス、広告の表示・視聴記録を取り扱います。LevelPlayに接続された広告ネットワークは、この情報を<b>各社のプライバシーポリシーに従って</b>、広告の配信・成果の計測・不正防止に利用することがあり、これは当該ネットワークへの<b>個人情報の提供</b>にあたります。
+  <li>広告SDKは、広告識別子（App Store版はトラッキングを許可した場合のみ）、端末情報（機種・OS・言語）、IPアドレス、広告の表示・視聴記録を取り扱います。Unityは、この情報を<b>Unityのプライバシーポリシーに従い、自ら責任を負う主体として</b>、広告の配信・成果の計測・不正防止に利用することがあり、これは当該ネットワークへの<b>個人情報の提供</b>にあたります。
     <table>
       <tr><th>提供を受ける者</th><th>目的</th><th>項目</th><th>保有・利用期間</th></tr>
-      <tr><td>Unity Technologies Inc.（Unity Ads）— 米国</td><td>広告の配信・成果の計測・不正防止</td><td>広告識別子、端末情報（機種・OS・言語）、IPアドレス、広告の表示・視聴記録</td><td>各社のプライバシーポリシーで定める期間（広告の提供・不正防止の目的を達成するまで）</td></tr>
-      <tr><td>ironSource Ltd.（ironSource、Unity Technologiesの子会社）— イスラエル</td><td>広告の配信・成果の計測・不正防止</td><td>広告識別子、端末情報（機種・OS・言語）、IPアドレス、広告の表示・視聴記録</td><td>各社のプライバシーポリシーで定める期間（広告の提供・不正防止の目的を達成するまで）</td></tr>
+      <tr><td>Unity Technologies SF（Unity Ads）— 米国</td><td>広告の配信・成果の計測・不正防止</td><td>広告識別子、端末情報（機種・OS・言語）、IPアドレス、広告の表示・視聴記録</td><td>広告の提供の目的に必要な期間（Unityのプライバシーポリシー第10項 — 固定の期間なし）・不正防止・セキュリティの目的のIPアドレス・端末ID等は、その目的に必要な期間、追加で保管されることがあります</td></tr>
+      <tr><td>Unity Technologies SF — ironSourceの施設（イスラエル）</td><td>広告の配信・成果の計測・不正防止</td><td>広告識別子、端末情報（機種・OS・言語）、IPアドレス、広告の表示・視聴記録</td><td>広告の提供の目的に必要な期間（Unityのプライバシーポリシー第10項 — 固定の期間なし）・不正防止・セキュリティの目的のIPアドレス・端末ID等は、その目的に必要な期間、追加で保管されることがあります</td></tr>
     </table>
   </li>
   <li>ユーザーは、端末の設定で<b>広告識別子を削除・リセットし、またはパーソナライズ広告を拒否</b>できます（Android：設定 ▸ Google ▸ 広告）。ワンストア版では、ゲーム内の<b>「［任意］パーソナライズ広告」</b>に同意しなければ、パーソナライズ広告には利用されず、この同意は、設定でいつでも変更できます。App Store版では、ATTによる確認でトラッキングを許可しないか、iOSの<b>設定 ▸ プライバシーとセキュリティ ▸ トラッキング</b>でいつでもオフにすることができ、その場合、広告識別子は広告ネットワークに提供されません。</li>
@@ -126,8 +126,8 @@
   <tr><td>Microsoft Corporation（<a href="https://privacy.microsoft.com/privacystatement">プライバシーポリシー</a>）</td><td>米国</td><td>匿名ID、ゲームデータ、ニックネーム、利用環境情報、利用統計イベント、接続記録、連携したメールアドレス</td><td>サービス利用時にネットワークで送信</td><td>ゲームのバックエンド・セーブデータ・認証</td><td>アカウント削除まで（連携したメールアドレスは退会と同時に削除し、残る匿名ID・接続記録は、3か月保存した後、遅滞なく破棄）</td></tr>
   <tr><td>Google LLC（<a href="https://policies.google.com/privacy">プライバシーポリシー</a>）</td><td>米国</td><td>決済履歴</td><td>Google Playでの決済時にネットワークで送信</td><td>アプリ配信・アプリ内課金</td><td>関係法令およびGoogleの方針による</td></tr>
   <tr><td>Apple Inc.（<a href="https://www.apple.com/legal/privacy/">プライバシーポリシー</a>）</td><td>米国</td><td>決済履歴</td><td>App Storeでの決済時にネットワークで送信</td><td>アプリ配信・アプリ内課金</td><td>関係法令およびAppleの方針による</td></tr>
-  <tr><td>Unity Technologies Inc.（LevelPlay・Unity Ads）（<a href="https://unity.com/legal/privacy-policy">プライバシーポリシー</a>）</td><td>米国</td><td>広告識別子、端末情報、IPアドレス、広告の表示・視聴記録</td><td>ワンストア版・App Store版で広告のリクエスト時にネットワークで送信</td><td>広告のメディエーション・配信・計測・不正防止</td><td>各社のプライバシーポリシーで定める期間（広告の提供・不正防止の目的を達成するまで）</td></tr>
-  <tr><td>ironSource Ltd.（ironSource、Unity Technologiesの子会社）</td><td>イスラエル</td><td>広告識別子、端末情報、IPアドレス、広告の表示・視聴記録</td><td>ワンストア版・App Store版で広告のリクエスト時にネットワークで送信</td><td>広告の配信・計測・不正防止</td><td>各社のプライバシーポリシーで定める期間（広告の提供・不正防止の目的を達成するまで）</td></tr>
+  <tr><td>Unity Technologies SF（LevelPlay・Unity Ads）（<a href="mailto:DPO@unity3d.com">DPO@unity3d.com</a>・116 New Montgomery Street, Suite 200, San Francisco, CA 94105, United States・<a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">プライバシーポリシー</a>）</td><td>米国</td><td>広告識別子、端末情報、IPアドレス、広告の表示・視聴記録</td><td>ワンストア版・App Store版で広告のリクエスト時にネットワークで送信</td><td>広告のメディエーション・配信・計測・不正防止</td><td>広告の提供の目的に必要な期間（Unityのプライバシーポリシー第10項 — 固定の期間なし）・不正防止・セキュリティの目的のIPアドレス・端末ID等は、その目的に必要な期間、追加で保管されることがあります</td></tr>
+  <tr><td>Unity Technologies SF — ironSourceの施設（連絡先は上記と同じ）</td><td>イスラエル</td><td>広告識別子、端末情報、IPアドレス、広告の表示・視聴記録</td><td>ワンストア版・App Store版で広告のリクエスト時にネットワークで送信</td><td>広告の配信・計測・不正防止</td><td>広告の提供の目的に必要な期間（Unityのプライバシーポリシー第10項 — 固定の期間なし）・不正防止・セキュリティの目的のIPアドレス・端末ID等は、その目的に必要な期間、追加で保管されることがあります</td></tr>
   <tr><td>Resend, Inc.（<a href="https://resend.com/legal/privacy-policy">プライバシーポリシー</a>）</td><td>米国</td><td>メールアドレス、認証コード、お問い合わせ内容</td><td>メール送信時にネットワークで送信</td><td>認証コード・お問い合わせへの回答メールの送信、お問い合わせの写しの転送</td><td>送信後は、Resendの方針による</td></tr>
   <tr><td>Cloudflare, Inc.（<a href="mailto:privacyquestions@cloudflare.com">privacyquestions@cloudflare.com</a>）</td><td>米国</td><td>接続記録（IP）、決済検証情報</td><td>データのダウンロード・決済の検証時にネットワークで送信</td><td>ゲームデータの配信（CDN）・決済レシート検証の中継</td><td>取扱い後は、Cloudflareの方針による</td></tr>
   <tr><td>Discord Inc.（<a href="mailto:privacy@discord.com">privacy@discord.com</a>）</td><td>米国</td><td>お問い合わせ内容、返信先メールアドレス、アカウントID、ニックネーム、端末情報</td><td>お問い合わせを送信するときにネットワークで送信</td><td>お問い合わせの受付・運営者宛て転送</td><td>3年間（消費者の苦情・紛争の処理記録）保管した後に破棄</td></tr>
@@ -204,7 +204,7 @@
   <li><b>利用目的</b> — 第1項の表に記載した目的（ゲームの提供・データの保存・本人確認・お問い合わせへの回答・決済の検証・広告の提供・不正行為の防止・サービスの改善と統計）に限ります。</li>
   <li><b>外国にある第三者への提供（APPI第28条）</b> — 当社は、外国にある第三者への個人データの提供について、APPI第28条第1項に基づく<b>ユーザーの同意</b>を根拠とします。同意をいただく前に、提供先の所在国、その国の個人情報保護制度および提供先が講ずる個人情報保護措置に関する情報をお知らせします。同意は、ゲームを初めて開始する際の同意画面でいただきます。
     <ul>
-      <li><b>提供先とその所在国</b> — ユーザーの情報は、当社の所在する<b>大韓民国</b>で取り扱われ、第3項の表に記載した者に提供されます。所在国は、<b>米国</b>（Microsoft・Google・Apple・Unity Technologies・Resend・Cloudflare・Discord）および<b>イスラエル</b>（ironSource Ltd. — ワンストア版・App Store版の広告ネットワーク）です。</li>
+      <li><b>提供先とその所在国</b> — ユーザーの情報は、当社の所在する<b>大韓民国</b>で取り扱われ、第3項の表に記載した者に提供されます。所在国は、<b>米国</b>（Microsoft・Google・Apple・Unity Technologies・Resend・Cloudflare・Discord）および<b>イスラエル</b>（Unity Technologies SFのironSourceの施設 — ワンストア版・App Store版の広告ネットワーク）です。</li>
       <li><b>各国の個人情報保護制度</b> — 個人情報保護委員会の資料でご確認いただけます（<a href="https://www.ppc.go.jp/enforcement/infoprovision/laws/offshore_report_korea/">大韓民国</a>・<a href="https://www.ppc.go.jp/personalinfo/legal/guidelines_offshore/">外国にある第三者への提供編ガイドライン</a>）。米国には連邦レベルの包括的な個人情報保護法はなく、分野別・州別の法律が適用されます。イスラエルには、プライバシー保護法（Protection of Privacy Law, 5741-1981）とその監督機関があります。</li>
       <li><b>提供先が講ずる措置</b> — 各社が公開しているプライバシーポリシーおよびデータ処理規約（Data Processing Addendum等）に定める保護措置によります（第3項の表に各社のポリシーへのリンクがあります）。</li>
     </ul>
