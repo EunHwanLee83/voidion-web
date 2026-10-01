@@ -142,16 +142,17 @@
 </table>
 <table>
 <tr><th>Grade</th><th>Nombre de types</th></tr>
-<tr><td>Commun</td><td>50 types</td></tr>
-<tr><td>Peu commun</td><td>50 types</td></tr>
-<tr><td>Rare</td><td>50 types</td></tr>
-<tr><td>Épique</td><td>50 types</td></tr>
-<tr><td>Légendaire</td><td>50 types</td></tr>
-<tr><td>Relique</td><td>50 types</td></tr>
-<tr><td>Mythique</td><td>50 types</td></tr>
+<tr><td>Commun</td><td>42 types</td></tr>
+<tr><td>Peu commun</td><td>42 types</td></tr>
+<tr><td>Rare</td><td>42 types</td></tr>
+<tr><td>Épique</td><td>42 types</td></tr>
+<tr><td>Légendaire</td><td>42 types</td></tr>
+<tr><td>Relique</td><td>42 types</td></tr>
+<tr><td>Mythique</td><td>42 types</td></tr>
 </table>
 <ul>
-<li>Il y a 6 emplacements d’équipement, comptant chacun 50 types — une fois le grade déterminé, un exemplaire est tiré avec une probabilité égale.</li>
+<li>Il y a 6 emplacements d’équipement, et chaque emplacement compte 7 types par grade (42 types par grade au total). Une fois le grade déterminé, l’emplacement est choisi avec une probabilité égale (chacun 1/6), puis l’un des 7 types de cet emplacement est tiré selon le ratio de palier — le nombre de types par palier est Inférieur 2 · Intermédiaire 2 · Supérieur 2 · Suprême 1.</li>
+<li>La probabilité d’obtenir un équipement précis est de <b>probabilité grade × palier ÷ (6 emplacements × nombre de types de ce palier)</b> — par exemple, Suprême (1 type)&nbsp;: valeur du tableau grade × palier ÷ 6 · Inférieur (2 types)&nbsp;: ÷ 12.</li>
 <li>Paliers au sein d’un grade (identiques pour tous les grades)&nbsp;: Inférieur 40&nbsp;% · Intermédiaire 30&nbsp;% · Supérieur 20&nbsp;% · Suprême 10&nbsp;%</li>
 <li><b>Pierres de transcendance supplémentaires</b> — Légendaire 5&nbsp;000 · Relique 10&nbsp;000 · Mythique 15&nbsp;000. Elles ne sont accordées que si vous possédez au moins 1 équipement transcendé. Le bonus dépend du grade tiré, que l’objet soit équipé ou démantelé.</li>
 </ul>
@@ -287,7 +288,7 @@
 <h2>Remarques générales</h2>
 <ul>
 <li>Toutes les probabilités sont exprimées en <b>pourcentage (%)</b>, et s’appliquent, à chaque lot d’une invocation, <b>de façon indépendante</b> de toutes les autres invocations.</li>
-<li>Les probabilités sont déterminées <b>en tirant d’abord le grade</b>, puis en tirant un exemplaire au sein de ce grade avec une probabilité égale — les valeurs du tableau sont les probabilités de chaque <b>Grade</b> ; la probabilité d’un seul exemplaire est de <b>probabilité du grade ÷ nombre de types dans ce grade</b>.</li>
+<li>Les probabilités sont déterminées <b>en tirant d’abord le grade</b>, puis en tirant un exemplaire au sein de ce grade avec une probabilité égale — les valeurs du tableau sont les probabilités de chaque <b>Grade</b> ; la probabilité d’un seul exemplaire est de <b>probabilité du grade ÷ nombre de types dans ce grade</b>. (Pour l’équipement, le calcul de la section «&nbsp;Invocation d’équipement&nbsp;» s’applique.)</li>
 <li>Pour les invocations, un mécanisme (pitié/garantie) qui <b>garantit</b> un grade supérieur après un nombre fixé d’invocations <b>n’est pas proposé</b>. Pour les équipements, les compétences et les alliés, le <b>Niveau d’invocation</b> n’est pas une attribution garantie&nbsp;; c’est un mécanisme grâce auquel <b>la table de probabilités elle-même s’améliore</b> — toutes ces valeurs figurent dans le tableau par niveau de chaque rubrique.</li>
 <li>Les probabilités des tableaux sont arrondies&nbsp;; leur somme peut donc différer légèrement de 100&nbsp;% dans les décimales.</li>
 <li>Si les probabilités sont modifiées, les modifications et leur date d’application seront annoncées à l’avance.</li>

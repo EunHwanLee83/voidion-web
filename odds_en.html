@@ -142,16 +142,17 @@
 </table>
 <table>
 <tr><th>Grade</th><th>Number of types</th></tr>
-<tr><td>Common</td><td>50 types</td></tr>
-<tr><td>Uncommon</td><td>50 types</td></tr>
-<tr><td>Rare</td><td>50 types</td></tr>
-<tr><td>Epic</td><td>50 types</td></tr>
-<tr><td>Legendary</td><td>50 types</td></tr>
-<tr><td>Relic</td><td>50 types</td></tr>
-<tr><td>Mythic</td><td>50 types</td></tr>
+<tr><td>Common</td><td>42 types</td></tr>
+<tr><td>Uncommon</td><td>42 types</td></tr>
+<tr><td>Rare</td><td>42 types</td></tr>
+<tr><td>Epic</td><td>42 types</td></tr>
+<tr><td>Legendary</td><td>42 types</td></tr>
+<tr><td>Relic</td><td>42 types</td></tr>
+<tr><td>Mythic</td><td>42 types</td></tr>
 </table>
 <ul>
-<li>There are 6 equipment slots, each with 50 types — after the grade is determined, an individual is drawn with equal probability.</li>
+<li>There are 6 equipment slots, and each slot has 7 types per grade (42 types per grade in total). After the grade is determined, the slot is chosen with equal probability (each 1/6), and one of that slot’s 7 types is drawn according to the tier ratio — the number of types per tier is Low 2 · Mid 2 · High 2 · Top 1.</li>
+<li>The probability of one specific equipment item is <b>grade × tier probability ÷ (6 slots × number of types in that tier)</b> — for example, Top (1 type) is the grade × tier table value ÷ 6 · Low (2 types) is ÷ 12.</li>
 <li>Tiers within a grade (same for all grades): Low 40% · Mid 30% · High 20% · Top 10%</li>
 <li><b>Additional Transcendence Stones</b> — Legendary 5,000 · Relic 10,000 · Mythic 15,000. These are granted only if you own 1 or more Transcended equipment items. The bonus is based on the grade drawn, regardless of whether the item is equipped or dismantled.</li>
 </ul>
@@ -287,7 +288,7 @@
 <h2>General Notes</h2>
 <ul>
 <li>All probabilities are expressed as <b>percentages (%)</b>, and they apply to each individual summon <b>independently</b> of all other summons.</li>
-<li>Probabilities are determined by <b>drawing the grade first</b>, then drawing an individual within that grade with equal probability — the values in the table are <b>Grade</b> probabilities, and the probability of a single individual is <b>grade probability ÷ number of types in that grade</b>.</li>
+<li>Probabilities are determined by <b>drawing the grade first</b>, then drawing an individual within that grade with equal probability — the values in the table are <b>Grade</b> probabilities, and the probability of a single individual is <b>grade probability ÷ number of types in that grade</b>. (For equipment, the calculation in the “Equipment Summon” section applies.)</li>
 <li>In summons, a mechanism (pity/guarantee) that <b>guarantees</b> a higher grade after a set number of summons <b>is not operated</b>. For equipment, skills, and allies, the <b>Summon Level</b> is not a guaranteed grant; it is a mechanism by which <b>the probability table itself improves</b> — all of those values are listed in the per-level table for each item.</li>
 <li>The probabilities in the tables are rounded, so their totals may differ slightly from 100% in the decimal places.</li>
 <li>If the probabilities change, the changes and their effective date will be announced in advance.</li>
