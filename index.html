@@ -121,7 +121,28 @@
                                        line-height:1.45; text-align:left; color:#1c1c22; }
   table.bizinfo th { background:#00000010; white-space:nowrap; }
   table.bizinfo a { color:#2d5fbf; }
+  /* 🇹🇼 대만 분급 표시 — 遊戲軟體分級管理辦法 제11조·제13조 (2026-10-03).
+     🔴 <b>마크는 45×45px 이상이어야 한다</b>(限制級만 50×50) — 줄이지 말 것.
+     ⚠️ 문구는 게임 안(`LegalInfo.RegionRatingLine`·`RegionLegalNotice`)과 <b>글자 그대로</b> 같아야 하고,
+        gamerating.org.tw 등록 내용과도 같아야 한다. 한쪽만 고치면 그 순간 어긋난다. */
+  .twrate { display:flex; align-items:flex-start; gap:12px;
+            background:#e9e7eef2; border-radius:10px; padding:12px 14px; margin:8px 0;
+            box-shadow:0 4px 16px rgba(0,0,0,.22); font-size:.72rem; line-height:1.5; color:#1c1c22; }
+  .twrate img { width:64px; height:64px; flex:0 0 64px; }
+  .twrate b { display:block; font-size:.82rem; margin-bottom:4px; }
   </style>
+
+  <h2 class="bizhead">臺灣 遊戲分級標示</h2>
+  <div class="twrate">
+    <img src="./img/tw_gsrr_12.png" alt="輔12級">
+    <div>
+      <b>輔12級（12歲以上始得使用）・暴力</b>
+      注意使用時間、避免沉迷。<br>
+      此為機會中獎商品，消費者購買或參與活動不代表即可獲得特定商品。<br>
+      本遊戲為免費使用，遊戲內另提供購買虛擬遊戲幣、物品等付費服務。
+    </div>
+  </div>
+
   <h2 class="bizhead">사업자 정보</h2>
   <table class="bizinfo">
     <tr><th>서비스명</th><td>미믹 키우기</td></tr>
